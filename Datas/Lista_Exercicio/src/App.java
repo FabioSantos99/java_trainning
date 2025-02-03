@@ -25,6 +25,7 @@ public class App {
         
             switch (option) {
                 case 1:
+                System.out.print("Quantas contas desejar cadastrar?: ");
                 int num = sc.nextInt();
 
                 for (int i = 0; i < num; i++) {
