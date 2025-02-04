@@ -18,7 +18,8 @@ public class App {
             System.out.println("2 - consult");
             System.out.println("3 - Deposit");
             System.out.println("4 - Withdraw");
-            System.out.println("5 - Exit");
+            System.out.println("5 - Consult transaction Historic");
+            System.out.println("6 - Exit");
             option = sc.nextInt();
 
         switch (option) {
@@ -74,6 +75,17 @@ public class App {
             break;
 
             case 5:
+            System.out.println("Tape the account number to watch your historial transaction: ");
+            int accountToViewHistory = sc.nextInt();
+            for (Bank bank : list) {
+                if (bank.getId() == accountToViewHistory) {
+                    bank.transactionHistory();
+                    break;
+                }
+            }
+            break;
+
+            case 6:
             System.out.println("Exit...Bye!");
             break;
 
@@ -82,7 +94,7 @@ public class App {
                 break;
         }
 
-        } while (option != 5);
+        } while (option != 6);
 
         sc.close();
     }
